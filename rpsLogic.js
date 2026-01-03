@@ -14,17 +14,16 @@ function getUserChoice(){
     return choice
 }
 
-let userScore=0
-let computerScore=0
+   let userScore=0
+    let computerScore=0
 
 function playRound(userChoice,computerChoice){
     userChoice=userChoice.toLowerCase()
 
-    if(userChoice.isEquals(computerChoice)){
+    if(userChoice === computerChoice){
         console.log(`its a tie : both chose ${userChoice}`)
     }
-
-    if(userChoice=='rock'&&computerChoice=='scissors'){
+    else if(userChoice=='rock'&&computerChoice=='scissors'){
         console.log(`you won: rock beats scissors`)
         userScore++
     }
@@ -49,3 +48,23 @@ function playRound(userChoice,computerChoice){
         computerScore++
     }
 }
+
+function playGame(){
+ 
+
+    for(let i =1;i<6;i++){
+        let userChoice = getUserChoice()
+        let computerChoice = getComputerChoice()
+        
+        playRound(userChoice,computerChoice)
+       
+    }
+     if(userScore>computerScore)
+            console.log("you won by "+(userScore-computerScore)+" rounds!!")
+    else if(userScore<computerScore)
+            console.log("you lost by "+(computerScore-userScore)+" rounds")
+    else 
+        console.log("you both are tied yet")
+}
+
+playGame()
