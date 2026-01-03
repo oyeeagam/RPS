@@ -67,4 +67,4 @@ function playGame(){
         console.log("you both are tied yet")
 }
 
-playGame()
+playGame();
